@@ -16,7 +16,7 @@ export interface ShapeState {
   width: number,
   height: number,
   padding: number,
-  output: any
+  output: string
 }
 
 export default class Shape extends React.Component<ShapeProps, ShapeState> {
@@ -64,7 +64,7 @@ export default class Shape extends React.Component<ShapeProps, ShapeState> {
   };
 
   // recursive method for making shapes row
-  public makeShape = (width, height, padding) => {
+  public makeShape = (width: number, height: number, padding:number) => {
     if (width <= padding || height <= padding) {
       if (width <= 0 || height <= 0) return [];
       if (height < 2) return [Array(width).fill(1)];
@@ -86,7 +86,6 @@ export default class Shape extends React.Component<ShapeProps, ShapeState> {
   };
 
   handleOnChange = (key: string, value: number) => {
-    console.log(key, value);
     switch (key) {
       case 'width':
         this.setState({ "width": value })

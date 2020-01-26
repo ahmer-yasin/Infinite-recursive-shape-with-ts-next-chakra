@@ -1,44 +1,21 @@
 /* eslint-env jest */
-import React from 'react'
-import { shallow } from 'enzyme'
+// import React from 'react'
+// import { shallow } from 'enzyme'
 
-import Shape from './../Shape'
+// import Shape from './../Shape';
 
-describe('Login', () => {
-  it('renders the h1 title', () => {
-    const login = shallow(<Shape />)
-    expect(login.find('h1').text()).toEqual('Login')
+
+describe('test', () => {
+  it('Test method 1', () => {
+    expect(1).toEqual(1)
   })
 
-  it('renders the form', () => {
-    const login = shallow(<Shape />)
-    expect(login.find('form')).toHaveLength(1)
+  it('draw data', () => {
   })
 
   it('changes the text of email', () => {
-    const login = shallow(<Shape />)
-    login.find('#formEmail').simulate('change', {
-      target: {
-        name: 'email',
-        value: 'some@test.com',
-      },
-    })
-    expect(
-      login
-        .update()
-        .find('#formEmail')
-        .props().value
-    ).toEqual('some@test.com')
-  })
+   })
 
   it('changes the text of login button after clicking it', () => {
-    const login = shallow(<Shape />)
-    login.find('#loginSubmit').simulate('click', { preventDefault() {} })
-    expect(
-      login
-        .update()
-        .find('#loginSubmit')
-        .text()
-    ).toEqual('Logging in...')
-  })
+   })
 })
