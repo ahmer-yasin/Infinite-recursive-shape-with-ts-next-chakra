@@ -2,21 +2,21 @@
 import React from 'react'
 import { shallow } from 'enzyme'
 
-import Login from './../Login'
+import Shape from './../Shape'
 
 describe('Login', () => {
   it('renders the h1 title', () => {
-    const login = shallow(<Login />)
+    const login = shallow(<Shape />)
     expect(login.find('h1').text()).toEqual('Login')
   })
 
   it('renders the form', () => {
-    const login = shallow(<Login />)
+    const login = shallow(<Shape />)
     expect(login.find('form')).toHaveLength(1)
   })
 
   it('changes the text of email', () => {
-    const login = shallow(<Login />)
+    const login = shallow(<Shape />)
     login.find('#formEmail').simulate('change', {
       target: {
         name: 'email',
@@ -32,7 +32,7 @@ describe('Login', () => {
   })
 
   it('changes the text of login button after clicking it', () => {
-    const login = shallow(<Login />)
+    const login = shallow(<Shape />)
     login.find('#loginSubmit').simulate('click', { preventDefault() {} })
     expect(
       login

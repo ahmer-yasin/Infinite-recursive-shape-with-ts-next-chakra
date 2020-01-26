@@ -1,5 +1,11 @@
+import {
+  ThemeProvider,
+} from '@chakra-ui/core';
+import Shape from '../src/modules/shape/Shape';
 const IndexPage = () => (
-  <h1>Testing Next.js App written in TypeScript with Jest</h1>
+  <ThemeProvider>
+    <Shape/>
+  </ThemeProvider>
 )
 
 export default IndexPage

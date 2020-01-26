@@ -1,4 +1,4 @@
-export interface LoginCredentials {
+export interface ShapeCredentials {
   email: string
   password: string
 }
