@@ -9,25 +9,14 @@ describe('Shape test cases', () => {
   let instance: Shape;
 
   beforeEach(() => {
-      instance = new Shape(ShapeState);
-  })
-  it('Test method 1', () => {
-    expect(1).toEqual(1)
+    instance = new Shape(ShapeState);
   });
 
-  it('draw data',async () => {
-    // for (const element of data) {
-    //   let args = element.input.split(",").map(Number);
-    //   console.log(args);
-    //   const pixelArrayJson = await instance.makeShape(args[0],args[1],args[2]);
-    //   expect(JSON.stringify(pixelArrayJson)).toBe(element.pixelArrayJson);
-    // }
-    let args = data[0].input.split(",").map(Number);
-    console.log(args);
-    const pixelArrayJson = await instance.makeShape(args[0],args[1],args[2]);
-    const pixelArrayJsons = await instance.makeShape(args[0],args[1],args[2]);
-    expect(JSON.stringify(pixelArrayJsons)).toBe(JSON.stringify(pixelArrayJson));
-    // expect(JSON.stringify(pixelArrayJson)).toBe(data[0].pixelArrayJson);
-
+  data.forEach(mock => {
+    const args = mock.input.split(',').map(Number);
+    it(`mock json render (${args})`, () => {
+      const pixelArrayJson = instance.makeShape(args[0], args[1], args[2]);
+      expect(JSON.stringify(pixelArrayJson)).toBe(mock.pixelArrayJson);
+    });
   });
 })

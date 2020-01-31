@@ -66,8 +66,12 @@ export default class Shape extends React.Component<ShapeProps, ShapeState> {
   // recursive method for making shapes row
   public makeShape = (width: number, height: number, padding:number) => {
     if (width <= padding || height <= padding) {
-      if (width <= 0 || height <= 0) return [];
-      if (height < 2) return [Array(width).fill(1)];
+      if (width <= 0 || height <= 0){
+        return [];
+      }
+      if (height < 2) {
+        return [Array(width).fill(1)];
+      } 
       return [
         Array(width).fill(1),
         ...Array.from({ length: height - 2 }, () => width < 2 ? [2] : [2, ...Array(width - 2).fill(0), 2]),
