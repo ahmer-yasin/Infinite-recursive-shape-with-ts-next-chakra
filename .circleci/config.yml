@@ -2,11 +2,17 @@ version: 2
 jobs:
   build:
     docker:
-      - image: atsnngs/heroku-nodejs-ci:latest
+      - image: buildpack-deps:trusty
     steps:
       - checkout
+      - restore_cache:
+          key: node_modules-{{ .Branch }}-{{ checksum "package.json" }}
       - run:
           command: npm install
+      - save_cache:
+          key: node_modules-{{ .Branch }}-{{ checksum "package.json" }}
+          paths:
+            - node_modules
       - run:
           command: npm test
       - run:
