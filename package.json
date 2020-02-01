@@ -1,5 +1,5 @@
 {
-  "name": "with-jest-typescript",
+  "name": "infinite-shape-typescript-next-chakraui",
   "version": "1.0.0",
   "scripts": {
     "test": "jest",
