@@ -2,7 +2,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: clojure:latest-node
+      - image: circleci/golang:1.11-node
     steps:
       - checkout
       - restore_cache:
